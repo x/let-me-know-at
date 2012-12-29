@@ -26,5 +26,13 @@ get '/:time' do
       end
     end
   end
-  haml :alarm
+  if @hours < 24 or @minutes < 60
+    haml :alarm
+  else
+    haml :error
+  end
+end
+
+get '/:error' do
+  haml :error
 end

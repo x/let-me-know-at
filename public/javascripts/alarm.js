@@ -36,19 +36,23 @@
   console.log("target time: " + target);
 
   $(function() {
-    var worker;
+    var userHasBeenNotified, worker;
     window.document.title = timeString;
     $('.alarm-time').text(timeString);
     worker = new Worker('javascripts/webworker.js');
+    userHasBeenNotified = false;
     worker.onmessage = function(e) {
       var reminderText;
-      reminderText = $('.reminder').val();
-      if (reminderText === "") {
-        alert("Letting you know that it's now " + timeString + "!");
-      } else {
-        alert("Letting you know, it's now " + timeString + "!\n" + reminderText);
+      if (!userHasBeenNotified) {
+        userHasBeenNotified = true;
+        reminderText = $('.reminder').val();
+        if (reminderText === "") {
+          alert("Letting you know that it's now " + timeString + "!");
+        } else {
+          alert("Letting you know, it's now " + timeString + "!\n" + reminderText);
+        }
+        return worker.terminate();
       }
-      return worker.terminate();
     };
     return worker.postMessage(target.getTime());
   });

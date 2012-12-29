@@ -46,13 +46,16 @@ $ ->
   worker = new Worker('javascripts/webworker.js')
   
   #remind the user when webworker decides time has come
+  userHasBeenNotified = false #stop gap in case message error
   worker.onmessage = (e)->
-    reminderText = $('.reminder').val()
-    if reminderText == ""
-      alert("Letting you know that it's now #{timeString}!")
-    else
-      alert("Letting you know, it's now #{timeString}!\n#{reminderText}")
-    worker.terminate()
+    unless userHasBeenNotified
+      userHasBeenNotified = true
+      reminderText = $('.reminder').val()
+      if reminderText == ""
+        alert("Letting you know that it's now #{timeString}!")
+      else
+        alert("Letting you know, it's now #{timeString}!\n#{reminderText}")
+      worker.terminate()
 
   #hand off the target time to the worker
   worker.postMessage(target.getTime())

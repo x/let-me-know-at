@@ -17,6 +17,10 @@ body {
   background-image: url('../images/gplaypattern.png');
 }
 
+::-webkit-input-placeholder { color:#ddd; }
+::-moz-placeholder { color:#ddd; } /* firefox 19+ */
+input:-moz-placeholder { color:#ddd; }
+
 /* -----------------------------------------
    Index
 ----------------------------------------- */

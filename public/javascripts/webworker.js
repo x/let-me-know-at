@@ -4,7 +4,6 @@
   this.onmessage = function(e) {
     var target;
     target = new Date(e.data);
-    postMessage(target);
     return setInterval(function() {
       var now;
       now = new Date();

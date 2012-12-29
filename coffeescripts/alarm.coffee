@@ -1,14 +1,41 @@
+#set up the target time object
+
+today = new Date()
+if window.lmka.urlTimeAdd
+  timeAdd = window.lmka.hours*3600000 + window.lmka.minutes*60000 
+  target = new Date(today.getTime() + timeAdd)
+else
+  target = new Date today.getFullYear(),
+                    today.getMonth(),
+                    today.getDate(),
+                    window.lmka.hours,
+                    window.lmka.minutes, 
+                    0,
+                    0
+
+#generate the time string 
+if target.getMinutes() < 10
+    minuteString = "0#{target.getMinutes()}"
+else
+    minuteString = target.getMinutes()
+
+if target.getHours() == 0 or target.getHours() == 12
+  hourString = '12'
+else
+  hourString = target.getHours()%12
+
+if target.getHours() < 12
+  meridiumString = "am"
+else
+  meridiumString = "pm"
+
+timeString = "#{hourString}:#{minuteString}#{meridiumString}"
+
+#logging cuz I'm a bad person
+console.log("current time: #{today}")
+console.log("target time: #{target}")
+
 $ ->
-  alarmTime = new Date(window.lmka.miliseconds)
-  console.log alarmTime
-  hour = alarmTime.getHours() % 12
-  hour = 12 if hour is 0
-  minutes = alarmTime.getMinutes()
-  if minutes < 10
-    timeString = "#{hour}:0#{minutes}"
-  else
-    timeString = "#{hour}:#{minutes}"
-  
   #update the document title
   window.document.title = timeString
   
@@ -18,11 +45,14 @@ $ ->
   #create a new web worker to run the time checker
   worker = new Worker('javascripts/webworker.js')
   
-  #remind the user when webworker decides time is good
+  #remind the user when webworker decides time has come
   worker.onmessage = (e)->
-    console.log(e.data)
-    alert("Reminding you!")
+    reminderText = $('.reminder').val()
+    if reminderText == ""
+      alert("Letting you know that it's now #{timeString}!")
+    else
+      alert("Letting you know, it's not #{timeString}!]\n#{reminderText}")
     worker.terminate()
 
   #hand off the target time to the worker
-  worker.postMessage(window.lmka.miliseconds)
+  worker.postMessage(target.getTime())

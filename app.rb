@@ -9,15 +9,22 @@ get '/:time' do
   t = params[:time]
   if t.match(/min|hour|day/)
     @add = true
-    minutes = t.slice(/\d+(?=min)/).to_i
-    hours = t.slice(/\d+(?=hour)/).to_i
-    @seconds = hours * 3600 + minutes * 60
+    @minutes = t.slice(/\d+(?=min)/i).to_i
+    @hours = t.slice(/\d+(?=hour)/i).to_i
   else
     @add = false
     stripped_number = t.scan(/\d/).join.to_i
-    minutes = (stripped_number > 99) ? stripped_number%100 : 0
-    hours = (stripped_number > 99) ? stripped_number/100 : stripped_number
-    @seconds = hours * 3600 + minutes * 60
+    @minutes = (stripped_number > 99) ? stripped_number%100 : 0
+    @hours = (stripped_number > 99) ? stripped_number/100 : stripped_number
+    if @hours == 12
+      unless t.match(/pm/i)
+        @hours = 0
+      end
+    else
+      if t.match(/pm/i)
+        @hours += 12
+      end
+    end
   end
   haml :alarm
 end

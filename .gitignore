@@ -17,4 +17,6 @@ tmp
 _yardoc
 doc/
 
-/public/javascripts/*
+/public/javascripts/alarm.js
+/public/javascripts/webworker.js
+/public/javascripts/index.js

@@ -2,4 +2,4 @@
 
 A dead simple reminder web app using sinatra, haml, foundation, coffeescript, and webworkers.
 
-Should be live shortly at http://letmeknow.at
+live at http://letmeknow.at

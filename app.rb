@@ -7,7 +7,7 @@ end
 
 get '/:time' do
   t = params[:time]
-  if t.match(/min|hour|day/)
+  if t.match(/min|hour/)
     @add = true
     @minutes = t.slice(/\d+(?=min)/i).to_i
     @hours = t.slice(/\d+(?=hour)/i).to_i
@@ -26,7 +26,8 @@ get '/:time' do
       end
     end
   end
-  if @hours < 24 or @minutes < 60
+  
+  if @hours < 24 and @minutes < 60 and t.match(/min|hour|am|pm/)
     haml :alarm
   else
     haml :error

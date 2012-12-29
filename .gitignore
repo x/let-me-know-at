@@ -17,8 +17,4 @@ tmp
 _yardoc
 doc/
 
-/public/javascripts/alarm.js
-/public/javascripts/webworker.js
-/public/javascripts/index.js
-
 .sass-cache

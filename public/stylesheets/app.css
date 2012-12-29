@@ -13,6 +13,18 @@
   src: url('../fonts/Pixel\ LCD-7.ttf');
 }
 
+@font-face {
+  font-family: DsDigi;
+  font-weight: normal;
+  src: url('../fonts/DS-DIGI.ttf');
+}
+
+@font-face {
+  font-family: DigitalSystem;
+  font-weight: normal;
+  src: url('../fonts/Digital\ System.ttf');
+}
+
 body {
   background-image: url('../images/gplaypattern.png');
 }
@@ -20,6 +32,7 @@ body {
 ::-webkit-input-placeholder { color:#ddd; }
 ::-moz-placeholder { color:#ddd; } /* firefox 19+ */
 input:-moz-placeholder { color:#ddd; }
+
 
 /* -----------------------------------------
    Index
@@ -41,8 +54,8 @@ input:-moz-placeholder { color:#ddd; }
 
 .title {
   text-align: center;
-  font-family: PixelLcd, sans-serif;
-  font-size: 60px;
+  font-family: DigitalSystem, sans-serif;
+  font-size: 80px;
 }
 
 .browser-bar {
@@ -91,4 +104,5 @@ h3 {
   border-color: transparent;
   overflow: auto;
   text-align: center;
+  margin-bottom: 100px;
 }

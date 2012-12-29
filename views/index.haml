@@ -1,4 +1,53 @@
 !!! 5
 
-%head
+%html
+  %head
+    %title Let Me Know At
+    %meta{'viewport' => 'width=device-width'}
+    %link{'rel' => 'stylesheet', 'href' => 'stylesheets/foundation.css'}
+    %link{'rel' => 'stylesheet', 'href' => 'stylesheets/app.css'}
+    %script{'src' => 'javascripts/modernizr.foundation.js'}
+    %script{'src' => 'javascripts/jquery.min.js'}
+  %body
+    .row
+      .twelve.columns.clock-face
+        %h1.title
+          Let Me Know At
+        .ten.columns.centered
+          %h4.subheader.subtitle
+            A simple tool to help remind you when you need to get shit done.
+          
+          %h2
+            How to use:
+          %p
+            Just open a new tab and type letmeknow.at/ and then time you'd like to be reminded. Go back to work, your game, or derping on reddit and when that time comes around your browser will switch to that tab and remind you.
+         
+          %h3 Let me know to make dinner at 7:30!
+          .panel.browser-bar
+            %img{'src' => '/favicon.ico'}
+            letmeknow.at/7:30
+          %a.button.success{:href => './7:30'}
+            Let Me Know!
+          
+          %h3 Let me know to call them back at one!
+          .panel.browser-bar
+            %img{'src' => '/favicon.ico'}
+            letmeknow.at/1
+          %a.button.success{:href => './1'}
+            Let Me Know!
+          
+          %h3 Let me know to check the oven in an hour and 10 minutes!
+          .panel.browser-bar
+            %img{'src' => '/favicon.ico'}
+            letmeknow.at/1hour10min
+          %a.button.success{:href => './1hour10min'}
+            Let Me Know!
 
+          %h2 Try it out!
+          %p
+            Still not sure? Give it a test run! Try a reminder one that will happen two minutes from now!
+          .panel.browser-bar
+            %img{'src' => '/favicon.ico'}
+            letmeknow.at/2min
+          %a.button.success{:href => './2min'}
+            Test It Out!

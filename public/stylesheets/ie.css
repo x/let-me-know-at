@@ -1,0 +1,53 @@
+/*
+Syntax error: File to import not found or unreadable: zurb/shared.
+              Load paths:
+                /Users/devon/workspace/let-me-know-at
+                /Users/devon/workspace/let-me-know-at/sass
+        on line 1 of sass/ie.scss
+
+1: @import "zurb/shared";
+2: 
+3: // IE styles
+4: //----------------------------------------------
+5: //
+6: // IE specific styles less than IE9. We hate IE.
+
+Backtrace:
+sass/ie.scss:1
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/import_node.rb:45:in `import'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:215:in `visit_import'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:126:in `visit_root'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/tree/root_node.rb:20:in `render'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/engine.rb:315:in `_render'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/engine.rb:262:in `render'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/plugin/compiler.rb:201:in `each'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/lib/sass/plugin/compiler.rb:299:in `block in watch'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/vendor/listen/lib/listen/multi_listener.rb:86:in `call'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/vendor/listen/lib/listen/multi_listener.rb:86:in `on_change'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/vendor/listen/lib/listen/multi_listener.rb:95:in `block in initialize_adapter'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/vendor/listen/lib/listen/adapters/polling.rb:55:in `call'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/vendor/listen/lib/listen/adapters/polling.rb:55:in `poll'
+/Users/devon/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.4/vendor/listen/lib/listen/adapters/polling.rb:31:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: zurb/shared.\A               Load paths:\A                 /Users/devon/workspace/let-me-know-at\A                 /Users/devon/workspace/let-me-know-at/sass\A         on line 1 of sass/ie.scss\A \A 1: @import \"zurb/shared\";\A 2: \A 3: // IE styles\A 4: //----------------------------------------------\A 5: //\A 6: // IE specific styles less than IE9. We hate IE."; }

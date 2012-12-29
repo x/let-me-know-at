@@ -1,0 +1,42 @@
+!!! 5
+
+%html
+  %head
+    %title Let Me Know At
+    %meta{'viewport' => 'width=device-width'}
+    %link{'rel' => 'stylesheet', 'href' => 'stylesheets/foundation.css'}
+    %link{'rel' => 'stylesheet', 'href' => 'stylesheets/app.css'}
+    %script{'src' => 'javascripts/modernizr.foundation.js'}
+    %script{'src' => 'javascripts/jquery.min.js'}
+      
+    :javascript
+      window.lmka = {};
+      today = new Date();
+      window.lmka.miliseconds = Math.floor(today.getTime());
+      if(#{@add}){
+        //set time to current time plus seconds
+        window.lmka.miliseconds += #{@seconds * 1000};
+      }else{
+        //set time to current time rounded down to nearest 12 hours
+        window.lmka.miliseconds += today.getTimezoneOffset() * 60000
+        window.lmka.miliseconds -= window.lmka.miliseconds % 43200000;
+        //add offset to make this local nearest 12 hours
+        console.log(new Date(window.lmka.miliseconds))
+        //add time from url
+        window.lmka.miliseconds += #{@seconds * 1000};
+      }
+
+    %script{'src' => 'javascripts/alarm.js'}
+
+  %body
+    %h1= "#{@hours} #{@minutes} #{@is_pm}"
+
+    .row
+      .eight.columns.centered.letting-you-know
+        %h1
+          Letting you know at 
+          %span.alarm-time
+            0:00
+    .row
+      .eight.columns.centered.reminder-message
+        %textarea.reminder

@@ -26,4 +26,5 @@ PLATFORMS
 DEPENDENCIES
   ZURB-foundation
   haml
+  sass
   sinatra

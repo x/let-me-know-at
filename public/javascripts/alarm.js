@@ -46,7 +46,7 @@
       if (reminderText === "") {
         alert("Letting you know that it's now " + timeString + "!");
       } else {
-        alert("Letting you know, it's not " + timeString + "!]\n" + reminderText);
+        alert("Letting you know, it's now " + timeString + "!\n" + reminderText);
       }
       return worker.terminate();
     };

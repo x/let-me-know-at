@@ -1,4 +1,5 @@
-let-me-know-at
-==============
+#let-me-know-at
 
-a dead simple reminder web app
+A dead simple reminder web app using sinatra and webworkers.
+
+Should be live shortly at http://letmeknow.at
